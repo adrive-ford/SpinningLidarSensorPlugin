@@ -17,7 +17,7 @@ The Spinning Lidar Sensor Plugin allows a spinning lidar model to be added to yo
 ~~~
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{1B9573B1-3B05-0E16-0039-0293A17EA8D2}",
+	"EngineAssociation": "{}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -28,18 +28,6 @@ The Spinning Lidar Sensor Plugin allows a spinning lidar model to be added to yo
 		}
 	],
 	"Plugins": [
-		{
-			"Name": "RoadGeneratorPlugin",
-			"Enabled": true
-		},
-		{
-			"Name": "VehicleGeneratorPlugin",
-			"Enabled": true
-		},
-		{
-			"Name": "ScenarioGeneratorPlugin",
-			"Enabled": true
-		},
 		{
 			"Name": "SpinningLidarSensorPlugin",
 			"Enabled": true
