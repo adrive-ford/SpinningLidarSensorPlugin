@@ -75,7 +75,7 @@ void ASpinningLidarSensorActor::BeginPlay()
     BeamSpacing = (MaxElevation - MinElevation) / (NumBeams-1);
 
     //Set the directory where the output file will be saved, by default the top level folder of the Unreal project
-    SaveFilePath = FPaths::GameDir() + SaveFileName;
+    SaveFilePath = FPaths::ProjectDir() + SaveFileName;
 	
     //Open file to write, and then write the headers for the columns in the .csv file
     IPlatformFile& PlatformFile = FPlatformFileManager::Get().GetPlatformFile();
