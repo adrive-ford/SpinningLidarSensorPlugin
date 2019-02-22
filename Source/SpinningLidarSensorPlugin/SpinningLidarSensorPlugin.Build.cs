@@ -28,6 +28,7 @@ public class SpinningLidarSensorPlugin : ModuleRules
 			new string[]
 			{
 				"Core",
+                "ConfigurationPlugin"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -40,6 +41,7 @@ public class SpinningLidarSensorPlugin : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+                "ConfigurationPlugin"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

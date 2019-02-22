@@ -4,10 +4,10 @@
 
 #include "Engine.h"
 #include "ModuleManager.h"
+#include "PluginMessaging.h"
 
-class FSpinningLidarSensorPluginModule : public IModuleInterface
-{
-public:
+class FSpinningLidarSensorPluginModule : public IModuleInterface {
+ public:
 
 	/** IModuleInterface implementation */
 	virtual void StartupModule() override;
