@@ -10,7 +10,6 @@ public class SpinningLidarSensorPlugin : ModuleRules
 		
 		PublicIncludePaths.AddRange(
 			new string[] {
-				"SpinningLidarSensorPlugin/Public"
 				// ... add public include paths required here ...
 			}
 			);
