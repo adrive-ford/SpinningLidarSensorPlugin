@@ -1,5 +1,7 @@
 // Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
-
+using System;
+using System.IO;
+using System.Collections;
 using UnrealBuildTool;
 
 public class SpinningLidarSensorPlugin : ModuleRules
@@ -27,7 +29,6 @@ public class SpinningLidarSensorPlugin : ModuleRules
 			new string[]
 			{
 				"Core",
-                "ConfigurationPlugin"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -40,10 +41,16 @@ public class SpinningLidarSensorPlugin : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
-                "ConfigurationPlugin"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
+
+		// Check if Configuration Plugin is included in the project
+		string ConfigurationPluginPath = ModuleDirectory + "/../../../ConfigurationPlugin";
+		if (Directory.Exists(ConfigurationPluginPath)) {
+			PublicDependencyModuleNames.Add("ConfigurationPlugin");
+			PrivateDependencyModuleNames.Add("ConfigurationPlugin");
+		}
 		
 		
 		DynamicallyLoadedModuleNames.AddRange(
