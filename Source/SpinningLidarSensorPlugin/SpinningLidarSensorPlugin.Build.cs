@@ -44,14 +44,6 @@ public class SpinningLidarSensorPlugin : ModuleRules
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
-
-		// Check if Configuration Plugin is included in the project
-		string ConfigurationPluginPath = ModuleDirectory + "/../../../ConfigurationPlugin";
-		if (Directory.Exists(ConfigurationPluginPath)) {
-			PublicDependencyModuleNames.Add("ConfigurationPlugin");
-			PrivateDependencyModuleNames.Add("ConfigurationPlugin");
-		}
-		
 		
 		DynamicallyLoadedModuleNames.AddRange(
 			new string[]
