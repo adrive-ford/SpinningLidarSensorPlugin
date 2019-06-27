@@ -5,7 +5,6 @@
 #include "Engine.h"
 #include "ModuleManager.h"
 #include "SpinningLidarSensorActor.h"
-#include "SpinningLidarSensorPlugin.generated.h"
 
 class FSpinningLidarSensorPluginModule : public IModuleInterface {
  public:
