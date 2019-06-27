@@ -4,16 +4,10 @@
 #include "Engine.h"
 #include "GameFramework/Actor.h"
 
-#if __has_include("ConfigurationPlugin.h")
-#define ConfigurationPluginIncluded
-#include "DocumentNode.h"
-#include "CommonActor.h"
-#endif
-
 #include "SpinningLidarSensorActor.generated.h"
 
 UCLASS()
-class SPINNINGLIDARSENSORPLUGIN_API ASpinningLidarSensorActor : public AActor, public CommonActor {
+class SPINNINGLIDARSENSORPLUGIN_API ASpinningLidarSensorActor : public AActor {
     GENERATED_BODY()
 
  public:
@@ -184,15 +178,4 @@ class SPINNINGLIDARSENSORPLUGIN_API ASpinningLidarSensorActor : public AActor, p
     float BeamSpacing;
     FString SaveFilePath;
     float SimTimeSeconds;
-
- public:
-#ifdef ConfigurationPluginIncluded
-    bool SetParamsFromYaml(UDocumentNode* SpinningLidarNode);
-    bool Initialize();
-    // UGroundTruthElement* GetCurrentGroundTruth() override;
-    FVector SpinningLidarLocation = FVector(0.0f, 0.0f, 2.0f);
-    FRotator SpinningLidarRotation = FRotator(0.0f, 0.0f, 0.0f);
-
-    FString Error = "";
-#endif
 };
