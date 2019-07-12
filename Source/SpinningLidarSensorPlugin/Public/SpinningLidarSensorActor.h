@@ -8,6 +8,7 @@
 #define ConfigurationPluginIncluded
 #include "DocumentNode.h"
 #include "CommonActor.h"
+#include "WaypointController.h"
 #endif
 
 #include "SpinningLidarSensorActor.generated.h"

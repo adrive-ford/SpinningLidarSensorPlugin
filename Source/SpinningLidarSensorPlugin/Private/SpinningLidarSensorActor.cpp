@@ -455,9 +455,22 @@ bool ASpinningLidarSensorActor::SetParamsFromYaml(UDocumentNode* SpinningLidarNo
 
     // check for motion
     UDocumentNode* MotionNode;
+    bool MotionParamsInitialized = false;
     if (SpinningLidarNode->TryGetMapField("motion", MotionNode)) {
-        MotionParamsInitialized = SetMotionParams(MotionNode, &SpinningLidarLocation,
-                                                  &SpinningLidarRotation, &Error);
+        UDocumentNode* ControlTypeNode;
+        if (MotionNode->TryGetMapField("control-type", ControlTypeNode)) {
+            if (ControlTypeNode->StringValue == "no-physics") {
+                UWaypointController *Controller = NewObject<UWaypointController>(this);
+                Controller->RegisterComponent();
+                MotionParamsInitialized = Controller->SetMotionParams(MotionNode,
+                    &SpinningLidarLocation, &SpinningLidarRotation, &Error);
+            } else {
+                TArray<FString> ValidValues = {"no-physics"};
+                Error += UDocumentNode::InvalidValueError("spinning-lidar.motion.control-type",
+                                                          ControlTypeNode->StringValue,
+                                                          ValidValues);
+            }
+        }
     }
 
     // check for location, rotation
