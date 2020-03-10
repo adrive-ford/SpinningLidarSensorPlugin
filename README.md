@@ -1,5 +1,5 @@
 # SpinningLidarSensorPlugin
-Tested to be working in UE4.17.2
+Tested to be working in UE4.22.1
 
 ## Overview
 The Spinning Lidar Sensor Plugin allows a spinning lidar model to be added to your ego vehicle for collecting data from the scene. The sensor uses the default properties of the Velodyne HDL-32E.
